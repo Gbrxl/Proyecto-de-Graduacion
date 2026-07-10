@@ -65,7 +65,7 @@ EcoGuia/
 Login de usuarios
 Guardar el progreso en una base de datos
 Notificaciones diarias del reto
-
+Recompensar a los Top 10.
 
 
 Hecho con mucho esfuerzo para mi proyecto de graduación 🌱
