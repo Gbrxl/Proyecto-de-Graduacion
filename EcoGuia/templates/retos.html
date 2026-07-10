@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGuía - Retos</title>
+  <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <h1 class="nav-logo">🌿 EcoGuía</h1>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/retos" class="activo">Retos</a></li>
+        <li><a href="/datos">Datos Eco</a></li>
+        <li><a href="/ranking">Ranking</a></li>
+        <li><a href="/sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="page-hero">
+      <h2 class="page-titulo">🌱 Retos de 30 días</h2>
+      <p class="page-subtitulo">
+        Un reto por día para construir hábitos sostenibles.
+        Cada acción pequeña suma al cambio grande.
+      </p>
+    </section>
+
+    <section class="seccion">
+      <div class="grid-retos">
+        {% for reto in retos %}
+        <div class="card-reto">
+          <div class="card-icono">{{ reto.icono }}</div>
+          <h3 class="card-dia">Día {{ reto.dia }}</h3>
+          <p class="card-texto">{{ reto.texto }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-logo">🌍 EcoGuía</p>
+    <p class="footer-frase">
+      Pequeñas acciones diarias, gran impacto para el planeta.
+    </p>
+    <div class="footer-iconos">
+      <span>♻️</span><span>🌱</span><span>💧</span>
+      <span>🌳</span><span>☀️</span>
+    </div>
+    <p class="footer-copy">© 2026 Proyecto de Graduación</p>
+  </footer>
+
+</body>
+</html>

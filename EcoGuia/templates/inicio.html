@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGuía - Inicio</title>
+  <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <h1 class="nav-logo">🌿 EcoGuía</h1>
+      <ul class="nav-links">
+        <li><a href="/" class="activo">Inicio</a></li>
+        <li><a href="/retos">Retos</a></li>
+        <li><a href="/datos">Datos Eco</a></li>
+        <li><a href="/ranking">Ranking</a></li>
+        <li><a href="/sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-contenido">
+        <p class="hero-badge">🌍 Proyecto de Graduación 2026</p>
+        <h2 class="hero-titulo">
+          Guía para combatir el Cambio Climático
+        </h2>
+        <p class="hero-subtitulo">
+          Aprende hábitos sostenibles a través de 30 retos
+          diarios. Pequeñas acciones que generan un gran
+          impacto para el planeta.
+        </p>
+        <div class="hero-botones">
+          <a href="/retos" class="btn-primario">Ver retos 🌱</a>
+          <a href="/datos" class="btn-secundario">
+            Datos ambientales
+          </a>
+        </div>
+      </div>
+      <div class="hero-emoji">🌍</div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats-grid">
+        {% for stat in estadisticas %}
+        <div class="stat-card">
+          <p class="stat-numero">{{ stat.numero }}</p>
+          <p class="stat-label">{{ stat.label }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="porque-section">
+      <h2 class="seccion-titulo">¿Por qué actuar ahora?</h2>
+      <div class="porque-grid">
+        <div class="porque-card">
+          <div class="porque-icono">🔥</div>
+          <h3>Crisis climática</h3>
+          <p>
+            El planeta está experimentando cambios sin
+            precedentes. La temperatura global sube cada
+            año y sus consecuencias afectan a millones.
+          </p>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icono">💪</div>
+          <h3>Tú puedes cambiar algo</h3>
+          <p>
+            Cada acción diaria cuenta. Desde apagar una
+            luz hasta usar transporte público, todos los
+            hábitos suman hacia un futuro mejor.
+          </p>
+        </div>
+        <div class="porque-card">
+          <div class="porque-icono">📅</div>
+          <h3>30 días de impacto</h3>
+          <p>
+            Los hábitos se forman en 21 días. Con 30
+            retos sostenibles, esta guía te ayuda a
+            construir una rutina ecológica duradera.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-logo">🌍 EcoGuía</p>
+    <p class="footer-frase">
+      Pequeñas acciones diarias, gran impacto para el planeta.
+    </p>
+    <div class="footer-iconos">
+      <span>♻️</span><span>🌱</span><span>💧</span>
+      <span>🌳</span><span>☀️</span>
+    </div>
+    <p class="footer-copy">© 2026 Proyecto de Graduación</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGuía - Ranking</title>
+  <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <h1 class="nav-logo">🌿 EcoGuía</h1>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/retos">Retos</a></li>
+        <li><a href="/datos">Datos Eco</a></li>
+        <li><a href="/ranking" class="activo">Ranking</a></li>
+        <li><a href="/sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="page-hero">
+      <h2 class="page-titulo">🏆 Top EcoHéroes</h2>
+      <p class="page-subtitulo">
+        Las personas que más han cuidado el planeta
+        completando retos sostenibles este mes.
+      </p>
+    </section>
+
+    <section class="podio-seccion">
+      <div class="podio">
+
+        <div class="podio-lugar segundo">
+          <div class="podio-avatar">{{ ranking[1].avatar }}</div>
+          <p class="podio-nombre">{{ ranking[1].nombre }}</p>
+          <p class="podio-retos">
+            {{ ranking[1].retos_completados }}/30 retos
+          </p>
+          <div class="podio-bloque plata">
+            <span class="podio-medalla">🥈</span>
+            <span class="podio-pos">2°</span>
+          </div>
+        </div>
+
+        <div class="podio-lugar primero">
+          <div class="podio-corona">👑</div>
+          <div class="podio-avatar grande">
+            {{ ranking[0].avatar }}
+          </div>
+          <p class="podio-nombre">{{ ranking[0].nombre }}</p>
+          <p class="podio-retos">
+            {{ ranking[0].retos_completados }}/30 retos
+          </p>
+          <div class="podio-bloque oro">
+            <span class="podio-medalla">🥇</span>
+            <span class="podio-pos">1°</span>
+          </div>
+        </div>
+
+        <div class="podio-lugar tercero">
+          <div class="podio-avatar">{{ ranking[2].avatar }}</div>
+          <p class="podio-nombre">{{ ranking[2].nombre }}</p>
+          <p class="podio-retos">
+            {{ ranking[2].retos_completados }}/30 retos
+          </p>
+          <div class="podio-bloque bronce">
+            <span class="podio-medalla">🥉</span>
+            <span class="podio-pos">3°</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="seccion tabla-seccion">
+      <h2 class="seccion-titulo">Tabla completa</h2>
+      <div class="tabla-wrapper">
+        <table class="tabla-ranking">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Usuario</th>
+              <th>Progreso</th>
+              <th>Pendientes</th>
+              <th>% planeta cuidado</th>
+              <th>Nivel</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for persona in ranking %}
+            <tr class="{% if loop.index <= 3 %}fila-top{% endif %}">
+              <td class="td-pos">
+                {% if loop.index == 1 %}🥇
+                {% elif loop.index == 2 %}🥈
+                {% elif loop.index == 3 %}🥉
+                {% else %}{{ loop.index }}
+                {% endif %}
+              </td>
+              <td class="td-usuario">
+                <span class="avatar-sm">{{ persona.avatar }}</span>
+                {{ persona.nombre }}
+              </td>
+              <td class="td-completados">
+                <div class="barra-wrapper">
+                  <div class="barra-progreso">
+                    <div class="barra-fill"
+                      style="width:{{ persona.porcentaje }}%">
+                    </div>
+                  </div>
+                  <span class="barra-num">
+                    {{ persona.retos_completados }}/30
+                  </span>
+                </div>
+              </td>
+              <td class="td-pendientes">
+                {{ 30 - persona.retos_completados }}
+              </td>
+              <td class="td-porcentaje">
+                <span class="badge-porcentaje">
+                  {{ persona.porcentaje }}%
+                </span>
+              </td>
+              <td class="td-nivel">
+                <span class="badge-nivel {{ persona.nivel_css }}">
+                  {{ persona.nivel }}
+                </span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-logo">🌍 EcoGuía</p>
+    <p class="footer-frase">
+      Pequeñas acciones diarias, gran impacto para el planeta.
+    </p>
+    <div class="footer-iconos">
+      <span>♻️</span><span>🌱</span><span>💧</span>
+      <span>🌳</span><span>☀️</span>
+    </div>
+    <p class="footer-copy">© 2026 Proyecto de Graduación</p>
+  </footer>
+
+</body>
+</html>

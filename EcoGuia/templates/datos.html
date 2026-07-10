@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGuía - Datos Eco</title>
+  <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <h1 class="nav-logo">🌿 EcoGuía</h1>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/retos">Retos</a></li>
+        <li><a href="/datos" class="activo">Datos Eco</a></li>
+        <li><a href="/ranking">Ranking</a></li>
+        <li><a href="/sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="page-hero">
+      <h2 class="page-titulo">📊 Datos ambientales</h2>
+      <p class="page-subtitulo">
+        Cifras reales sobre el estado del planeta.
+        Conocer el problema es el primer paso para actuar.
+      </p>
+    </section>
+
+    <section class="seccion">
+      <div class="grid-datos">
+        {% for dato in datos %}
+        <div class="eco-card">
+          <div class="eco-icono">{{ dato.icono }}</div>
+          <h3 class="eco-titulo">{{ dato.titulo }}</h3>
+          <p class="eco-valor-grande">{{ dato.valor }}</p>
+          <p class="eco-desc">{{ dato.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-logo">🌍 EcoGuía</p>
+    <p class="footer-frase">
+      Pequeñas acciones diarias, gran impacto para el planeta.
+    </p>
+    <div class="footer-iconos">
+      <span>♻️</span><span>🌱</span><span>💧</span>
+      <span>🌳</span><span>☀️</span>
+    </div>
+    <p class="footer-copy">© 2026 Proyecto de Graduación</p>
+  </footer>
+
+</body>
+</html>

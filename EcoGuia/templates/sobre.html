@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGuía - Sobre el proyecto</title>
+  <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <h1 class="nav-logo">🌿 EcoGuía</h1>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/retos">Retos</a></li>
+        <li><a href="/datos">Datos Eco</a></li>
+        <li><a href="/ranking">Ranking</a></li>
+        <li><a href="/sobre" class="activo">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="page-hero">
+      <h2 class="page-titulo">📖 Sobre el proyecto</h2>
+      <p class="page-subtitulo">
+        Conoce la idea detrás de EcoGuía y por qué fue creado.
+      </p>
+    </section>
+
+    <section class="seccion sobre-seccion">
+      <div class="sobre-card">
+        <div class="sobre-icono">🎯</div>
+        <h3>¿Cuál es el objetivo?</h3>
+        <p>
+          EcoGuía nació como proyecto de graduación con el
+          objetivo de crear conciencia sobre el cambio
+          climático a través de hábitos diarios concretos
+          y medibles. La idea es simple: 30 días, 30 retos,
+          30 oportunidades de mejorar el planeta.
+        </p>
+      </div>
+      <div class="sobre-card">
+        <div class="sobre-icono">💻</div>
+        <h3>¿Cómo está construido?</h3>
+        <p>
+          El proyecto está desarrollado con Flask y Python
+          en el backend, usando plantillas Jinja para
+          renderizar el HTML dinámicamente. El diseño está
+          hecho con CSS puro, sin frameworks externos.
+        </p>
+      </div>
+      <div class="sobre-card">
+        <div class="sobre-icono">🚀</div>
+        <h3>¿Qué viene a futuro?</h3>
+        <p>
+          A futuro se planea agregar un sistema de login
+          para guardar el progreso de cada usuario en una
+          base de datos, notificaciones diarias y un
+          dashboard con estadísticas personales de impacto.
+        </p>
+      </div>
+      <div class="sobre-card">
+        <div class="sobre-icono">👤</div>
+        <h3>Sobre el desarrollador</h3>
+        <p>
+          Proyecto desarrollado por un estudiante de
+          Tarpon Springs High School como proyecto final
+          de graduación en el área de desarrollo web
+          con Python y Flask.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-logo">🌍 EcoGuía</p>
+    <p class="footer-frase">
+      Pequeñas acciones diarias, gran impacto para el planeta.
+    </p>
+    <div class="footer-iconos">
+      <span>♻️</span><span>🌱</span><span>💧</span>
+      <span>🌳</span><span>☀️</span>
+    </div>
+    <p class="footer-copy">© 2026 Proyecto de Graduación</p>
+  </footer>
+
+</body>
+</html>
