@@ -9,7 +9,7 @@ Este proyecto de graduación será para tener una guía de como contrarrestas la
 
 🌍 EcoGuía
 
-Este es mi proyecto de graduación de Tarpon Springs High School. Es una app web sobre el cambio climático donde puedes ver retos ambientales de 30 días, datos reales del planeta y un ranking de los usuarios más ecológicos.
+Este es mi proyecto de graduación. Es una app web sobre el cambio climático donde puedes ver retos ambientales de 30 días, datos reales del planeta y un ranking de los usuarios más ecológicos.
 
 Lo hice con Python y Flask porque quería aprender a hacer páginas web con un backend real, no solo HTML y CSS.
 
